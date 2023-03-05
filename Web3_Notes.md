@@ -8,6 +8,17 @@
 - It is another website which **allows users to easily search** and **browse transactions and blocks**.
 - It contains maximum information about the transaction including the smart contract.
 
+## Connecting the Wallet
+
+- We have to use JsonRpcProvider and pass an https url to connect the account to the blockchain.
+- Could be done using
+
+```JS
+// where node is the https url from the quicknode
+const provider = new ethers.JsonRpcProvider(node);
+
+```
+
 ## Getting BlockNumber
 
 - This method returns the **block number**.
@@ -40,3 +51,12 @@ const balance = await provider.getBalance('0x690B9A9E9aa1C9dB991C7721a92d351Db4F
 - We can get all the information of Smart contract using tokenAddress , ABI .
 - tokenAddress is the url of Contract copied from a random ERC20 token from [coingecko](https://www.coingecko.com/en/coins/shiba-inu) in the project.
 - ABI code could be accessed from [etherscan](https://etherscan.io/address/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce#code) by pasting the address url and getting the contract.
+
+## Using SmartContract events
+
+- We can get the information of events from [events](https://etherscan.io/address/0x95ad61b0a150d79219dcf64e1e6cc01f0b64c4ce#events) page of etherscan.
+- The parameters is also mentioned there in green color.
+
+## How to get testnest balance
+
+- If we are using goerli, dont forget to connect the https of goerli from quicknode else you wont get the balance of goerli.

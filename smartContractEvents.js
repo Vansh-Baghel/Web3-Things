@@ -14,9 +14,12 @@ const provider = new ethers.JsonRpcProvider(node);
   const contract = new ethers.Contract(tokenAddress , tokenABI, provider);
   
 async function main() {
-// It wont work if the node url is of not of mainnet
-    const name = await contract.name();
 
-    console.log(name);
+    contract.on("Transfer", (from, to, value, data) => {
+        console.log("from" , from);
+        console.log("to" , to);
+        console.log("value" , ethers.formatEther(value));
+        console.log(data);
+    })
 }
 main();

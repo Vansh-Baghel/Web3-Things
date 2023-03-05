@@ -1,13 +1,15 @@
 // Got this https url from quicknode
-// https://misty-spring-county.discover.quiknode.pro/28c2e90c45b6163ce7579fa3f08690c18324c944/
+// https://quaint-cosmopolitan-dream.ethereum-goerli.discover.quiknode.pro/8be7a21fe8a61f785780fd8dd00b54f63a34145b/
 
 const { ethers, Provider, AnkrProvider } = require("ethers");
 
 const node =
-  "https://misty-spring-county.discover.quiknode.pro/28c2e90c45b6163ce7579fa3f08690c18324c944";
+  "https://quaint-cosmopolitan-dream.ethereum-goerli.discover.quiknode.pro/8be7a21fe8a61f785780fd8dd00b54f63a34145b/";
 const provider = new ethers.JsonRpcProvider(node);
 
 async function main() {
+// It wont work if the node url is of not of mainnet
+
   const blockNumber = await provider.getBlockNumber();
   const block = await provider.getBlock(blockNumber);
   const oneTransaction = await provider.getTransaction(
